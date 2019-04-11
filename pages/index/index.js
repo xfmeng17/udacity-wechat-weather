@@ -20,11 +20,11 @@ Page({
     nowWeather: '多云',
     nowWeatherBackground: ''
   },
-  onLoad() {
+  getNow(callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/weather/now',
       data: {
-        city: '北京市'
+        city: '上海市'
       },
       header: {
         'content-type': 'application/json'
@@ -36,13 +36,26 @@ Page({
         console.log(temp, weather)
         this.setData({
           nowTemp: temp + '°',
-          nowWeather: weatherMap[weather]
+          nowWeather: weatherMap[weather],
+          nowWeatherBackground: '/images/' + weather + '-bg.png'
         })
         wx.setNavigationBarColor({
           frontColor: '#000000',
           backgroundColor: weatherColorMap[weather],
         })
+      },
+      complete: () => {
+        callback && callback()
+        // callback && console.log('do callback func')
       }
+    })
+  },
+  onLoad() {
+    this.getNow()
+  },
+  onPullDownRefresh() {
+    this.getNow(() => {
+      wx.stopPullDownRefresh()
     })
   }
 })
