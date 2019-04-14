@@ -30,7 +30,7 @@ Page({
     hourlyWeather: [],
     todayDate: '',
     todayTemp: '',
-    city: '上海市',
+    city: '广州市',
     locationAuthType: UNPROMPTED
   },
 
