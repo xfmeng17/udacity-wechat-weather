@@ -16,7 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx8d44f74f80be8c29",
-	"projectname": "weather",
+	"projectname": "wechat-weather",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

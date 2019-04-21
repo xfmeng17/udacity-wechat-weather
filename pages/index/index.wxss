@@ -107,15 +107,15 @@
 }
 
 .forecast-list {
-    display:flex
+  display:flex
 }
 
 .forecast-item {
-    display:flex;
-    width: 120rpx;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: center;
+  display:flex;
+  width: 120rpx;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
 }
 
 .forecast-tiem {
